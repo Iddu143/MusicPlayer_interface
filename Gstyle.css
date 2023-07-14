@@ -1,0 +1,73 @@
+*,*::after, *::before{
+    box-sizing: border-box;
+
+}
+:root{
+    --hue:200;
+    --saturation:50%;
+    --foreground-color:hsl(var(--hue),var(--saturation),75%);
+    --baground-color:hsl(var(--hue),var(--saturation));
+}
+body{
+    margin: 0;
+    background-color:var(--baground-color);
+    /* background-color: black; */
+
+   
+}
+.paddle{
+    --position:50;
+    position:absolute;
+    background-color:var(--foreground-color);
+    top:calc(var(--position)*1vh);
+    transform: translateY(-50%);
+    width:1vh;
+    height: 50vh;
+
+}
+
+.paddle .left{
+    /* left:8vh; */
+    /* background-color: red; */
+
+}
+.paddle .right{
+    right:5vh;
+}
+
+.ball {
+    --x:50;
+    --y:50;
+    position:absolute;
+    background-color:var(--foreground-color);
+    left:calc(var(--x) *1vh);
+    top:calc(var(--y)*1vh);
+    border-radius: 50%;
+    width:2.5vh;
+    height:2.5vh;
+    transform: translateY(-50%,-50%);
+    width:1vh;
+    height: 10vh;
+    /* background-color: red; */
+
+}
+.score{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 7vh;
+    color:var(--foreground-color);
+
+}
+.score > *{
+    flex-grow: 1;
+    flex-basis: 0;
+    padding:0 2vh;
+    margin: 1vh 0;
+    opacity:.5;
+}
+.score >:first-child{
+    text-align: right;
+    border-right: .5vh solid var(--foreground-color);
+
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>music player</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="style.css">
+   </head>
+   <body>
+    <!-- <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand">Navbar</a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </nav> -->
+    <div class="main">
+        <p id="logo"><i class="fa fa-music"></i>Music</p>
+        <!-- left parrt -->
+        <div class="left">
+            <img id="track_image">
+            <div class="volume">
+                <p id="volume_show">90</p>
+                <i class="fa fa-volume-up" aria-hidden="true" onclick="mute_sound()"id="volum_icon"></i>
+                <input type="range" min="0" max="100" value="90" onclick="volume_change()"  id="volume">
+
+            </div>
+        </div>
+
+        <!-- right part -->
+        <div class="right">
+            <div class="show_song_no">
+                <p id="present">1</p>
+                <p>/</p>
+                <p id="total">6</p>
+            </div>
+
+            <!-- song title and artist name -->
+            <p id="title">title.mp3</p>
+            <p id="artist">Artist name</p>
+
+            <!-- middle part -->
+            <div class="middle">
+                <button  id="pre" onclick="previous_song()"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+                <button  id="play" onclick="justplay()"><i class=" fa fa-play" aria-hidden="true"></i></button>
+                <button  id="next" onclick="next_song()"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+             </div>
+
+
+             <!-- song duration -->
+             <div class="duration">
+                <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+             </div>
+             <button id="auto" onclick="autoplay_switch()">Auto play <i class="fa fa-circle-o-notch" aria-hidden="true"></i></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+   </body>
+</html>
